@@ -3,7 +3,7 @@
   "expoServerPort": null,
   "packagerPort": null,
   "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null
+  "expoServerNgrokUrl": "https://3k-ebg.anonymous.gitgoingapp.exp.direct",
+  "packagerNgrokUrl": "https://packager.3k-ebg.anonymous.gitgoingapp.exp.direct",
+  "ngrokPid": 25440
 }
