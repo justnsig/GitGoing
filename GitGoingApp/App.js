@@ -2,7 +2,7 @@ import React from 'react';
 import { AppRegistry, StyleSheet, Text, View, Button } from 'react-native';
 import Login from './src/Login';
 import { connect, Provider } from 'react-redux';
-import { INIT, CLONE, STASH, RESET, PUSH, PULL, ADD, COMMIT } from './src/actions';
+import { INIT, CLONE, STASH, RESET, PUSH, PULL, ADD, COMMIT, STATUS } from './src/actions';
 import storeConfig from './src/store';
 
 const store = storeConfig;
@@ -42,9 +42,14 @@ handleCommit = () => {
 handleStatus = () => {
   this.props.onStatus();
 };
-
-const GitTest = ({ hint }) => (
-  <Text>{hint}</Text>
+//this is where we need to add the function
+const GitTest = ({ hint, onStatus }) => (
+  <View>
+    <Text>{ hint }</Text>
+    <Button 
+    onPress={ onStatus }
+    title="Hint"/>
+    </View>
 );
 
 const mapStateToProps = (state) => ({
@@ -92,7 +97,7 @@ export default class App extends React.Component {
         <Text>GitGoing</Text>
         <Login />
         <GitChoices />
-        <Text>{this.props.hint}</Text>
+        
       </View>
     </Provider>
     
