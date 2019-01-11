@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
 import { TouchableOpacity, Text, Button, StyleSheet, View } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import AntiClippyHalf from './AntiClippyHalf';
 import Login from './Login';
 import Password from './Password';
+
+
 
 const Home = () => {
    const goToGitInit = () => {
@@ -21,6 +23,7 @@ const Home = () => {
         <View style={styles.textInput}><Password /></View> 
       </View> 
       <TouchableOpacity style = {{ marginTop: 150 }}> 
+    
          <Button 
          onPress = {goToGitInit}
          title= "GitGoing to Git Init"
