@@ -4,7 +4,8 @@ import { Actions } from 'react-native-router-flux'
 import AntiClippy from './AntiClippy';
 
 const GitInit = () => {
-   const goToGetAdd = () => {
+
+   const goToGitAdd = () => {
       Actions.gitAdd()
    }
    return (
@@ -19,7 +20,7 @@ const GitInit = () => {
       </View>
       <TouchableOpacity style={styles.button}>
          <Button 
-         onPress = {goToGetAdd}
+         onPress = {goToGitAdd}
          title= "GitGoing to Git Add"
          color='#FF6D70'
          />

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { TouchableOpacity, Text, Button, StyleSheet, View } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import AntiClippyHalf from './AntiClippyHalf';
@@ -8,6 +8,8 @@ import * as firebase from 'firebase';
 //Not sure how important it is to use the form import but maybe big
 import {Form} from 'native-base';
 import AuthBTN from './AuthBTN';
+
+
 
 const Home = () => {
    const goToGitInit = () => {
@@ -62,6 +64,7 @@ const Home = () => {
       </Form>
       </View> 
       <TouchableOpacity style = {{ marginTop: 150 }}> 
+    
          <Button 
          onPress = {goToGitInit}
          title= "GitGoing to Git Init"

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Router, Scene } from 'react-native-router-flux'
+import { Router, Scene, Drawer } from 'react-native-router-flux'
 import Home from './Home'
 import GitInit from './GitInit'
 import GitAdd from './GitAdd'
@@ -10,20 +10,24 @@ import GitStash from './GitStash'
 import GitPush from './GitPush'
 import GitClone from './GitClone'
 import GitPull from './GitPull'
+import DrawerItems from './DrawerItems'
+
 
 const Routes = () => (
    <Router>
       <Scene key = "root">
+      <Drawer drawerPosition={'right'} contentComponent={DrawerItems}>
          <Scene key = "home" component = {Home} title = "GitGoing" initial = {true} />
-         <Scene key = "gitInit" component = {GitInit} title = "GitInit" />
-         <Scene key = "gitAdd" component = {GitAdd} title = "GitAdd" />
-         <Scene key = "gitCommit" component = {GitCommit} title = "GitCommit" />
-         <Scene key = "gitStatus" component = {GitStatus} title = "GitStatus" />
-         <Scene key = "gitReset" component = {GitReset} title = "GitReset" />
-         <Scene key = "gitStash" component = {GitStash} title = "GitStash" />
-         <Scene key = "gitPush" component = {GitPush} title = "GitPush" />
-         <Scene key = "gitClone" component = {GitClone} title = "GitClone" />
-         <Scene key = "gitPull" component = {GitPull} title = "GitPull" />
+         <Scene key = "gitInit" component = {GitInit} title = "Git Init"/>
+         <Scene key = "gitAdd" component = {GitAdd} title = "Git Add" />
+         <Scene key = "gitCommit" component = {GitCommit} title = "Git Commit" />
+         <Scene key = "gitStatus" component = {GitStatus} title = "Git Status" />
+         <Scene key = "gitReset" component = {GitReset} title = "Git Reset" />
+         <Scene key = "gitStash" component = {GitStash} title = "Git Stash" />
+         <Scene key = "gitPush" component = {GitPush} title = "Git Push" />
+         <Scene key = "gitClone" component = {GitClone} title = "Git Clone" />
+         <Scene key = "gitPull" component = {GitPull} title = "Git Pull" />  
+      </Drawer>
       </Scene>
    </Router>
 )
