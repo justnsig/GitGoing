@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Button } from 'react-native'
+import { View, Button, StyleSheet } from 'react-native'
 import { Actions } from 'react-native-router-flux'
 
 
@@ -47,13 +47,13 @@ export default class DrawerItems extends React.Component {
     render () {
     
    return (
-    <View>
+    <View style = { styles.button }>
        <Button title="GitGoing Home" onPress={Home} />
        <Button title="Git Init" onPress={Init} />
        <Button title="Git Clone" onPress={Clone} />
+       <Button title="Git Status" onPress={Status} />
        <Button title="Git Pull" onPress={Pull} />
        <Button title="Git Add" onPress={Add} />
-       <Button title="Git Status" onPress={Status} />
        <Button title="Git Stash" onPress={Stash} />
        <Button title="Git Reset" onPress={Reset} />
        <Button title="Git Commit" onPress={Commit} />
@@ -61,3 +61,8 @@ export default class DrawerItems extends React.Component {
     </View>
    )}
 }
+const styles = StyleSheet.create({
+    button: { 
+        marginTop: 45
+    }
+})

@@ -2,10 +2,10 @@ import React from 'react'
 import { TouchableOpacity, Text, Button, StyleSheet, View } from 'react-native'
 import { Actions } from 'react-native-router-flux'
 import AntiClippy from './AntiClippy'
-
+//route to home
 const GitPush = () => {
-   const goToClone = () => {
-      Actions.gitClone()
+   const goTohome = () => {
+      Actions.home()
    }
    return (
       <View style={styles.container}>
@@ -19,8 +19,8 @@ const GitPush = () => {
       </View>
       <TouchableOpacity style={styles.button}>
          <Button 
-         onPress = {goToClone}
-         title= "GitGoing to Git Clone"
+         onPress = {goTohome}
+         title= "GitGoing Back Home"
          color='#FF6D70'
          />
       </TouchableOpacity>
