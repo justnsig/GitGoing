@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Routes from './src/Routes';
+import firebase from 'firebase';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDr7FQ1ZB99JyB_UOmqCAnzeO2UixpCgLE",

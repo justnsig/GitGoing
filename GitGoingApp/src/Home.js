@@ -7,21 +7,29 @@ import Password from './Password';
 import * as firebase from 'firebase';
 //Not sure how important it is to use the form import but maybe big
 import {Form} from 'native-base';
+import AuthBTN from './AuthBTN';
 
 const Home = () => {
    const goToGitInit = () => {
       Actions.gitInit()
    }
+
+   state = {
+    email: '',
+    password: '',
+    test: 'stuff'
+  }
    //login and password are place holders until OKTA Auth is entered. Will need to restyle after
 
    //SignUp and SignIn Functions
    signUpUser = (email, password) => {
+     console.log(`email: ${email}  Password: ${password}`)
       try{
         if(password.length < 6){
           alert("Please use a password that is no less than 6 characters.")
           return;
         }
-        firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+        firebase.auth().createUserWithEmailAndPassword(email, password)
       }
       catch(err){
         console.log(err)
@@ -49,7 +57,8 @@ const Home = () => {
       </View>
       <Form>
       <View style={styles.textInput1}><Login /></View> 
-        <View style={styles.textInput}><Password /></View> 
+      <View style={styles.textInput}><Password /></View> 
+      <View><AuthBTN/></View>
       </Form>
       </View> 
       <TouchableOpacity style = {{ marginTop: 150 }}> 
