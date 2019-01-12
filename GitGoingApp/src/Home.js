@@ -1,55 +1,28 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { TouchableOpacity, Text, Button, StyleSheet, View } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import { TextInput } from "react-native";
 import AntiClippyHalf from './AntiClippyHalf';
-import Login from './Login';
-import Password from './Password';
-import * as firebase from 'firebase';
-//Not sure how important it is to use the form import but maybe big
 import {Form} from 'native-base';
-import AuthBTN from './AuthBTN';
+import auth from './authFunc';
 
 
+const goToGitInit = () => {
+   Actions.gitInit()
+}
 
-const Home = () => {
-   const goToGitInit = () => {
-      Actions.gitInit()
-   }
+export default class InputBox extends Component {
 
-   state = {
-    email: '',
-    password: '',
-    test: 'stuff'
+  constructor(props){
+    super(props)
+
+    this.state = ({
+      email: '',
+      password: ''
+    })
   }
-   //login and password are place holders until OKTA Auth is entered. Will need to restyle after
-
-   //SignUp and SignIn Functions
-   signUpUser = (email, password) => {
-     console.log(`email: ${email}  Password: ${password}`)
-      try{
-        if(password.length < 6){
-          alert("Please use a password that is no less than 6 characters.")
-          return;
-        }
-        firebase.auth().createUserWithEmailAndPassword(email, password)
-      }
-      catch(err){
-        console.log(err)
-      }
   
-    }
-  
-    loginUser = (email, password) => {
-      try{
-        firebase.auth().signInWithEmailAndPassword(email, password).then(function (user){
-          console.log(user);
-        })
-      }
-      catch(err){
-        console.log(err)
-      }
-    }
-
+render(){
    return (
       <View style={styles.container}>
       <View style={styles.textBox1}>
@@ -58,9 +31,45 @@ const Home = () => {
       <Text style={styles.title}>GitGoing</Text>
       </View>
       <Form>
-      <View style={styles.textInput1}><Login /></View> 
-      <View style={styles.textInput}><Password /></View> 
-      <View><AuthBTN/></View>
+      <View style={styles.textInput1}>
+      <TextInput 
+                onChangeText={(text) => this.setState({email: text})} 
+                placeholder = "Email"
+                value={this.state.email} 
+                autoCorrect = {false}
+                autoCapitolize = "none"
+                />
+      </View> 
+      <View style={styles.textInput}>
+      <TextInput 
+                    onChangeText={(text) => this.setState({password: text})} 
+                    placeholder = "Password"
+                    value={this.state.password} 
+                    secureTextEntry = {true}
+                    autoCorrect = {false}
+                    autoCapitalize = "none"
+                />
+      </View> 
+      <View>
+        <Button 
+            title= "LogIn"
+            full
+            rounded
+            success
+            onPress = {() => auth.loginUser(this.state.email, this.state.password)}
+        >
+        <Text>Login</Text>
+        </Button>
+        <Button 
+            title= "SignUp"
+            full
+            rounded
+            primary 
+            onPress = {() => auth.signUpUser(this.state.email, this.state.password)}
+        >
+        <Text>SignUp</Text>
+        </Button>
+      </View>
       </Form>
       </View> 
       <TouchableOpacity style = {{ marginTop: 150 }}> 
@@ -74,6 +83,7 @@ const Home = () => {
       <Text style={styles.p}>Would you like to learn more?</Text>
       </View>
    )
+}
 }
 const styles = StyleSheet.create({
    container: {
@@ -156,5 +166,3 @@ const styles = StyleSheet.create({
 
 
  });
-
-export default Home
