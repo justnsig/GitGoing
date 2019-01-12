@@ -2,10 +2,10 @@ import React from 'react'
 import { TouchableOpacity, Text, Button, StyleSheet, View } from 'react-native'
 import { Actions } from 'react-native-router-flux'
 import AntiClippy from './AntiClippy'
-
+//route to commit
 const GitStash = () => {
-   const goToPush = () => {
-      Actions.gitPush()
+   const goToCommit = () => {
+      Actions.gitCommit()
    }
    return (
       <View style={styles.container}>
@@ -19,8 +19,8 @@ const GitStash = () => {
       </View>
       <TouchableOpacity style={styles.button}>
          <Button 
-         onPress = {goToPush}
-         title= "GitGoing to Git Push"
+         onPress = {goToCommit}
+         title= "GitGoing to Git Commit"
          color='#FF6D70'
          />
       </TouchableOpacity>
