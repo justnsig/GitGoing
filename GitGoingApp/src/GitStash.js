@@ -1,7 +1,8 @@
 import React from 'react'
 import { TouchableOpacity, Text, Button, StyleSheet, View } from 'react-native'
 import { Actions } from 'react-native-router-flux'
-import AntiClippy from './AntiClippy'
+import AntiClippyL from './AntiClippyL'
+import * as Animatable from 'react-native-animatable';
 //route to commit
 const GitStash = () => {
    const goToCommit = () => {
@@ -11,9 +12,9 @@ const GitStash = () => {
       <View style={styles.container}>
       <View style={styles.brownBox}><Text style={styles.title}>Git Stash</Text>
       <View style={styles.circle1}>
-       
-      <Text style={styles.p}>Stores incomplete changes.</Text>
-      <AntiClippy style={styles.AntiClippy}/>
+      <Animatable.View animation="bounceInLeft"><AntiClippyL style={styles.AntiClippy}/></Animatable.View>
+      <Text style={styles.p}>Stores incomplete changes. Type <Text style={{ fontWeight: 'bold' }}>git stash </Text> to save files without committing.</Text>
+      
      
       </View>
       </View>

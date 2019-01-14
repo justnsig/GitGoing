@@ -5,6 +5,7 @@ import { TextInput } from "react-native";
 import AntiClippyHalf from './AntiClippyHalf';
 import {Form} from 'native-base';
 import auth from './authFunc';
+import * as Animatable from 'react-native-animatable'
 
 
 const goToGitInit = () => {
@@ -24,11 +25,12 @@ export default class InputBox extends Component {
   
 render(){
    return (
+    
       <View style={styles.container}>
       <View style={styles.textBox1}>
       <View style={styles.circle}>
-      <AntiClippyHalf style={styles.AntiClippyHalf}/>
-      <Text style={styles.title}>GitGoing</Text>
+      <Animatable.View animation="fadeInDown"><AntiClippyHalf style={styles.AntiClippyHalf}/></Animatable.View>
+      <Animatable.Text animation="rubberBand"><Text style={styles.title}>GitGoing</Text></Animatable.Text>
       </View>
       <Form>
       <View style={styles.textInput1}>
@@ -51,28 +53,32 @@ render(){
                 />
       </View> 
       <View>
+      <TouchableOpacity style = {{ marginTop: 10 }}> 
         <Button 
             title= "LogIn"
             full
             rounded
             success
             onPress = {() => auth.loginUser(this.state.email, this.state.password)}
-        >
-        <Text>Login</Text>
-        </Button>
+            color= "#FF6D70"
+        />
+    </TouchableOpacity>
+        </View>
+        <View>
+        <TouchableOpacity style = {{ marginTop: 10}}> 
         <Button 
             title= "SignUp"
             full
             rounded
-            primary 
+            success
             onPress = {() => auth.signUpUser(this.state.email, this.state.password)}
-        >
-        <Text>SignUp</Text>
-        </Button>
+            color= "#FF6D70"  
+        />   
+   </TouchableOpacity>
       </View>
       </Form>
       </View> 
-      <TouchableOpacity style = {{ marginTop: 150 }}> 
+      <TouchableOpacity style = {{ marginTop: 250 }}> 
     
          <Button 
          onPress = {goToGitInit}
@@ -82,6 +88,7 @@ render(){
       </TouchableOpacity>
       <Text style={styles.p}>Would you like to learn more?</Text>
       </View>
+     
    )
 }
 }
@@ -114,7 +121,7 @@ const styles = StyleSheet.create({
    borderRadius: 200,
    borderColor: '#4A4843',
    borderWidth: 25,
-   marginTop:100,
+   marginTop:220,
    
  },
  //brown box
@@ -142,7 +149,7 @@ const styles = StyleSheet.create({
    borderRadius: 20,
    width: 200,
    marginTop: 0,
-   alignItems: 'center',
+   alignItems: 'center',   
    
  },
 
@@ -155,11 +162,10 @@ const styles = StyleSheet.create({
    borderRadius: 20,
    width: 200,
    marginTop: 10,
+   marginBottom: 20,
    alignItems: 'center',
  },
- button: {
-    color:'#FF6D70',
- },
+
  p:{
     color: 'white',
  },

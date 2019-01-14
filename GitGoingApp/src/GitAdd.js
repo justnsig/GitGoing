@@ -2,17 +2,18 @@ import React from 'react'
 import { TouchableOpacity, Text, Button, StyleSheet, View } from 'react-native'
 import { Actions } from 'react-native-router-flux'
 import AntiClippy from './AntiClippy';
+import * as Animatable from 'react-native-animatable';
 //route to stash
 const GitAdd = () => {
    const goToStash = () => {
       Actions.gitStash()
    }
-   return (
+   return ( 
       <View style={styles.container}>
-      <View style={styles.brownBox}><Text style={styles.title}>Git Add</Text>
+      <View style={styles.brownBox}><Animatable.Text animation="zoomInUp"><Text style={styles.title}>Git Add</Text></Animatable.Text>
       <View style={styles.circle1}>
        
-      <Text style={styles.p}>Saves a snapshot of a file or all files. Get ready to Commit!</Text>
+      <Text style={styles.p}>Saves a snapshot of a file or all files you have changed. Type <Text style={{ fontWeight: 'bold' }}>git add .</Text> to add files.</Text>
       <AntiClippy style={styles.AntiClippy}/>
      
       </View>

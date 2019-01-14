@@ -1,7 +1,8 @@
 import React from 'react'
 import { TouchableOpacity, Text, Button, StyleSheet, View } from 'react-native'
 import { Actions } from 'react-native-router-flux'
-import AntiClippy from './AntiClippy'
+import AntiClippyL from './AntiClippyL'
+import * as Animatable from 'react-native-animatable'
 //route to push
 const GitReset = () => {
    const goToPush = () => {
@@ -9,11 +10,13 @@ const GitReset = () => {
    }
    return (
       <View style={styles.container}>
-      <View style={styles.brownBox}><Text style={styles.title}>Git Reset</Text>
+      <View style={styles.brownBox}>
+      <Animatable.Text animation="zoomInDown"><Text style={styles.title}>Git Reset</Text></Animatable.Text>
       <View style={styles.circle1}>
-       
-      <Text style={styles.p}>Oh shit button. Undoes all commits, preserving changes locally. Start over if needed. </Text>
-      <AntiClippy style={styles.AntiClippy}/>
+      <AntiClippyL style={styles.AntiClippy}/>
+      <Text style={styles.p}>Oh S#!% button!! Undoes all commits, preserving changes locally. Start over if needed.. Type <Text style={{ fontWeight: 'bold' }}>git reset</Text> to discard last commit. *Note: you MUST do this before you push!!</Text>
+   
+      
      
       </View>
       </View>
@@ -43,12 +46,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column',
-    fontSize: 60,
+    fontSize: 50,
     textShadowColor: 'rgba(0, 0, 0, 0.75)',
     textShadowOffset: {width: -1, height: 1},
     textShadowRadius: 10,
-    marginTop: 0,
-    paddingTop: 75,
+    marginTop: 40,
+    paddingTop: 175,
     
    },
    //white circle
@@ -74,7 +77,7 @@ const styles = StyleSheet.create({
    alignItems: 'center',
    justifyContent: 'center',
    borderRadius: 220,
-   marginTop: 50,
+   marginTop: 30,
    paddingBottom: 25,
  },
 

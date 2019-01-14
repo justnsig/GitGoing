@@ -2,6 +2,8 @@ import React from 'react'
 import { TouchableOpacity, Text, Button, StyleSheet, View } from 'react-native'
 import { Actions } from 'react-native-router-flux'
 import AntiClippy from './AntiClippy';
+import * as Animatable from 'react-native-animatable';
+
 //route ro reset
 const GitCommit = () => {
    const goToReset = () => {
@@ -9,10 +11,11 @@ const GitCommit = () => {
    }
    return (
       <View style={styles.container}>
-      <View style={styles.brownBox}><Text style={styles.title}>Git Commit</Text>
+      <View style={styles.brownBox}>
+      <Animatable.Text animation="zoomInDown"><Text style={styles.title}>Git Commit</Text></Animatable.Text>
       <View style={styles.circle1}>
        
-      <Text style={styles.p}>Saves your snapshot permanently. Not ready yet? No worries. </Text>
+      <Text style={styles.p}>This saves the work you added earlier by using git add. Type <Text style={{ fontWeight: 'bold' }}>git commit -m "initial commit"</Text> to save your files. The "initial commit" is your message to track changes. Feel free to change the message.</Text>
       <AntiClippy style={styles.AntiClippy}/>
      
       </View>
@@ -58,7 +61,7 @@ const styles = StyleSheet.create({
    height: 400,
    alignItems: 'center',
    justifyContent: 'center',
-   borderRadius: 200,
+   borderRadius: 100,
    borderColor: '#4A4843',
    borderWidth: 15,
    marginTop:60,
@@ -73,7 +76,7 @@ const styles = StyleSheet.create({
    height:575,
    alignItems: 'center',
    justifyContent: 'center',
-   borderRadius: 220,
+   borderRadius: 120,
    marginTop: 50,
    paddingBottom: 25,
  },

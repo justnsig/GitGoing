@@ -2,21 +2,25 @@ import React from 'react'
 import { TouchableOpacity, Text, Button, StyleSheet, View } from 'react-native'
 import { Actions } from 'react-native-router-flux'
 import AntiClippy from './AntiClippy';
+import * as Animatable from 'react-native-animatable';
+
 //route to clone
 const GitInit = () => {
 
    const goToGitClone = () => {
       Actions.gitClone()
    }
+ 
    return (
       <View style={styles.container}>
-      <View style={styles.brownBox}><Text style={styles.title}>Git Init</Text>
+      
+      <View style={styles.brownBox}><Animatable.Text animation="zoomInUp"><Text style={styles.title}>Git Init</Text></Animatable.Text>
       <View style={styles.circle1}>
        
-      <Text style={styles.p}>Create a new local repository. Which is fancy speak for folder. THIS IS EXTRA TEXT TO TEST TEXT WRAPPING </Text>
+      <Text style={styles.p}>This how you can save a new local repository (aka repo) to your machine. Type <Text style={{ fontWeight: 'bold' }}>git init </Text> to add a new empty repo to your machine.</Text>
       <AntiClippy style={styles.AntiClippy}/>
-     
-      </View>
+      
+      </View> 
       </View>
       <TouchableOpacity style={styles.button}>
          <Button 
@@ -46,8 +50,8 @@ const styles = StyleSheet.create({
     textShadowColor: 'rgba(0, 0, 0, 0.75)',
     textShadowOffset: {width: -1, height: 1},
     textShadowRadius: 10,
-    marginTop: 0,
-    paddingTop: 75,
+    marginTop: 10,
+    paddingTop: 95,
     
    },
    //white circle
@@ -74,7 +78,7 @@ const styles = StyleSheet.create({
    justifyContent: 'center',
    borderRadius: 220,
    marginTop: 50,
-   paddingBottom: 25,
+   paddingBottom: 5,
  },
 
 //logo

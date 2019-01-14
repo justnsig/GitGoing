@@ -1,7 +1,8 @@
 import React from 'react'
 import { TouchableOpacity, Text, Button, StyleSheet, View } from 'react-native'
 import { Actions } from 'react-native-router-flux'
-import AntiClippy from './AntiClippy';
+import AntiClippyL from './AntiClippyL';
+import * as Animatable from 'react-native-animatable'
 //route to add
 const GitPull = () => {
    const goToAdd = () => {
@@ -9,11 +10,12 @@ const GitPull = () => {
    }
    return (
       <View style={styles.container}>
-      <View style={styles.brownBox}><Text style={styles.title}>Git Pull</Text>
+      <View style={styles.brownBox}>
+      <Animatable.Text animation="zoomInDown"><Text style={styles.title}>Git Pull</Text></Animatable.Text>
       <View style={styles.circle1}>
-       
-      <Text style={styles.p}>Downloads history and incorporates changes from Projects or repositories you have cloned. </Text>
-      <AntiClippy style={styles.AntiClippy}/>
+      <AntiClippyL style={styles.AntiClippy}/> 
+      <Text style={styles.p}>This adds any changes that have been made to the repo by someone else. Type <Text style={{ fontWeight: 'bold' }}>git pull</Text> to add these changes to your computer.</Text>
+      
      
       </View>
       </View>
@@ -58,7 +60,7 @@ const styles = StyleSheet.create({
    height: 400,
    alignItems: 'center',
    justifyContent: 'center',
-   borderRadius: 200,
+   borderRadius: 100,
    borderColor: '#4A4843',
    borderWidth: 15,
    marginTop:60,
@@ -73,7 +75,7 @@ const styles = StyleSheet.create({
    height:575,
    alignItems: 'center',
    justifyContent: 'center',
-   borderRadius: 220,
+   borderRadius: 120,
    marginTop: 50,
    paddingBottom: 25,
  },
