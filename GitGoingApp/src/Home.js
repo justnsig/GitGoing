@@ -4,7 +4,7 @@ import { Actions } from 'react-native-router-flux';
 import { TextInput } from "react-native";
 import AntiClippyHalf from './AntiClippyHalf';
 import {Form} from 'native-base';
-import * as auth from '../db/fire';
+import fire from '../db/fire';
 //import init from '../db/fireInit';
 import * as Animatable from 'react-native-animatable'
 
@@ -63,7 +63,7 @@ render(){
             full
             rounded
             success
-            onPress = {() => auth.loginUser(this.state.email, this.state.password)}
+            onPress = {() => fire.loginUser(this.state.email, this.state.password)}
             color= "#FF6D70"
         />
     </TouchableOpacity>
@@ -75,7 +75,7 @@ render(){
             full
             rounded
             success
-            onPress = {() => auth.signUpUser(this.state.email, this.state.password)}
+            onPress = {() => fire.signUpUser(this.state.email, this.state.password)}
             color= "#FF6D70"  
         />   
    </TouchableOpacity>
