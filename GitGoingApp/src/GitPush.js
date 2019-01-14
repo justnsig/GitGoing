@@ -2,6 +2,7 @@ import React from 'react'
 import { TouchableOpacity, Text, Button, StyleSheet, View } from 'react-native'
 import { Actions } from 'react-native-router-flux'
 import AntiClippy from './AntiClippy'
+import * as Animatable from 'react-native-animatable'
 //route to home
 const GitPush = () => {
    const goTohome = () => {
@@ -12,12 +13,12 @@ const GitPush = () => {
       <View style={styles.brownBox}><Text style={styles.title}>Git Push</Text>
       <View style={styles.circle1}>
        
-      <Text style={styles.p}> Uploads your changes to GitHub! Upload is like saving your file.</Text>
-      <AntiClippy style={styles.AntiClippy}/>
+      <Text style={styles.p}>Push is how we send all of the changes you added then committed to GitHub. Type <Text style={{ fontWeight: 'bold' }}>git push</Text> to upload your project.</Text>
+      <Animatable.View animation="bounceInRight"><AntiClippy style={styles.AntiClippy}/></Animatable.View>
      
       </View>
       </View>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button}> 
          <Button 
          onPress = {goTohome}
          title= "GitGoing Back Home"

@@ -1,7 +1,8 @@
 import React from 'react'
 import { TouchableOpacity, Text, Button, StyleSheet, View } from 'react-native'
 import { Actions } from 'react-native-router-flux'
-import AntiClippy from './AntiClippy';
+import AntiClippyL from './AntiClippyL';
+import * as Animatable from 'react-native-animatable'
 //route to status
 const GitClone = () => {
    const goToStatus = () => {
@@ -9,11 +10,12 @@ const GitClone = () => {
    }
    return (
       <View style={styles.container}>
-      <View style={styles.brownBox}><Text style={styles.title}>Git Clone</Text>
+      <View style={styles.brownBox}>
+      <Animatable.Text animation="zoomInDown"><Text style={styles.title}>Git Clone</Text></Animatable.Text>
       <View style={styles.circle1}>
-       
-      <Text style={styles.p}>Download a project to your computer.</Text>
-      <AntiClippy style={styles.AntiClippy}/>
+      <AntiClippyL style={styles.AntiClippy}/> 
+      <Text style={styles.p}>This is how you copy a repo (repository) you or someone else created to your computer. Type <Text style={{ fontWeight: 'bold' }}>git clone </Text> then paste the link from GitHub and watch the magic!</Text>
+      
      
       </View>
       </View>
@@ -58,7 +60,7 @@ const styles = StyleSheet.create({
    height: 400,
    alignItems: 'center',
    justifyContent: 'center',
-   borderRadius: 200,
+   borderRadius: 100,
    borderColor: '#4A4843',
    borderWidth: 15,
    marginTop:60,
@@ -73,7 +75,7 @@ const styles = StyleSheet.create({
    height:575,
    alignItems: 'center',
    justifyContent: 'center',
-   borderRadius: 220,
+   borderRadius: 120,
    marginTop: 50,
    paddingBottom: 25,
  },

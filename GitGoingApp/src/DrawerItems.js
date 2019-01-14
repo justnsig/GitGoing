@@ -48,21 +48,23 @@ export default class DrawerItems extends React.Component {
     
    return (
     <View style = { styles.button }>
-       <Button title="GitGoing Home" onPress={Home} />
-       <Button title="Git Init" onPress={Init} />
-       <Button title="Git Clone" onPress={Clone} />
-       <Button title="Git Status" onPress={Status} />
-       <Button title="Git Pull" onPress={Pull} />
-       <Button title="Git Add" onPress={Add} />
-       <Button title="Git Stash" onPress={Stash} />
-       <Button title="Git Reset" onPress={Reset} />
-       <Button title="Git Commit" onPress={Commit} />
-       <Button title="Git Push" onPress={Push} />
+       <Button title="GitGoing Home" onPress={Home} color='#4A4843' />
+       <Button title="Git Init" onPress={Init} color='#A79B82'/>
+       <Button title="Git Clone" onPress={Clone} color='#4A4843'/>
+       <Button title="Git Status" onPress={Status} color='#A79B82'/>
+       <Button title="Git Pull" onPress={Pull} color='#4A4843'/>
+       <Button title="Git Add" onPress={Add} color='#A79B82'/>
+       <Button title="Git Stash" onPress={Stash} color='#4A4843'/>
+       <Button title="Git Reset" onPress={Reset} color='#A79B82'/>
+       <Button title="Git Commit" onPress={Commit} color='#4A4843'/>
+       <Button title="Git Push" onPress={Push} color='#A79B82'/>
     </View>
    )}
 }
 const styles = StyleSheet.create({
     button: { 
-        marginTop: 45
+        marginTop: 45,
+        backgroundColor: '#A79B82',
+        color: '#FF6D70',
     }
-})
+})    

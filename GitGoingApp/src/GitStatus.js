@@ -2,6 +2,7 @@ import React from 'react'
 import { TouchableOpacity, Text, Button, StyleSheet, View } from 'react-native'
 import { Actions } from 'react-native-router-flux'
 import AntiClippy from './AntiClippy'
+import * as Animatable from 'react-native-animatable'
 // rout to pull
 const GitStatus = () => {
    const goToPull = () => {
@@ -9,11 +10,11 @@ const GitStatus = () => {
    }
    return (
       <View style={styles.container}>
-      <View style={styles.brownBox}><Text style={styles.title}>Git Status</Text>
+      <View style={styles.brownBox}>
+      <Text style={styles.title}>Git Status</Text>
       <View style={styles.circle1}>
-       
-      <Text style={styles.p}>This shows a list of all new or modified files. If you need to make a change there are options.</Text>
-      <AntiClippy style={styles.AntiClippy}/>
+      <Text style={styles.p}>View any changes that have been made or items ready to be committed. Type <Text style={{ fontWeight: 'bold' }}>git status </Text>If items are RED, they have not been added yet. If items are GREEN they are ready to commit.</Text> 
+      <Animatable.View animation="bounceInRight"><AntiClippy style={styles.AntiClippy}/></Animatable.View>
      
       </View>
       </View>
