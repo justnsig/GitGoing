@@ -25,7 +25,7 @@ signUpUser: (email, password) => {
       }
       firebase.auth().createUserWithEmailAndPassword(email, password).then(function(fireUser){
 
-        fire.loginUser();
+        fire.loginUser(email, password);
       })
     }
     catch(err){
