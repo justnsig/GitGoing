@@ -4,9 +4,13 @@ import { Actions } from 'react-native-router-flux';
 import { TextInput } from "react-native";
 import AntiClippyHalf from './AntiClippyHalf';
 import {Form} from 'native-base';
-import auth from './authFunc';
+import * as auth from '../db/fire';
+//import init from '../db/fireInit';
 import * as Animatable from 'react-native-animatable'
 
+// init.startApp();
+
+// App.initializeApp();
 
 const goToGitInit = () => {
    Actions.gitInit()

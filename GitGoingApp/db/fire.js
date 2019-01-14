@@ -1,4 +1,6 @@
 import * as firebase from 'firebase';
+//import fireDB from './fireData';
+import { Actions } from 'react-native-router-flux';
 
 const firebaseConfig = {
     apiKey: "AIzaSyDr7FQ1ZB99JyB_UOmqCAnzeO2UixpCgLE",
@@ -11,7 +13,9 @@ const firebaseConfig = {
   
   firebase.initializeApp(firebaseConfig);
 
-const authFunc = {
+const db = firebase.database();
+
+const fire = {
 
 signUpUser: (email, password) => {
     try{
@@ -19,7 +23,10 @@ signUpUser: (email, password) => {
         alert("Please use a password that is no less than 6 characters.")
         return;
       }
-      firebase.auth().createUserWithEmailAndPassword(email, password)
+      firebase.auth().createUserWithEmailAndPassword(email, password).then(function(fireUser){
+
+        fire.loginUser();
+      })
     }
     catch(err){
       console.log(err)
@@ -31,13 +38,32 @@ signUpUser: (email, password) => {
     try{
       firebase.auth().signInWithEmailAndPassword(email, password).then(function (user){
         console.log(user);
+        Actions.gitInit();
       })
     }
     catch(err){
       console.log(err)
     }
-  }
+  },
+
+  writeData: (userID, name, milestone) => {
+    db.ref('users/' + userID).set({
+        username: name,
+        mailestone: milestone
+    })
+},
+
+readData: () => {
+    db.ref('users/' + userID).once('value').then(function(snapshot){
+        let username = (snapshot.val() && snapshot.val().username || 'Anonymous')
+    })
+},
+
+updateData: () => {
+    db.ref('users/' + userID)
+    //unfinished
+}
 
 }
 
-export default authFunc;
+export default fire;
