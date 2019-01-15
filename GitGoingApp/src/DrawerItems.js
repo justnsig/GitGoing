@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Button, StyleSheet } from 'react-native'
+import { View, Button, StyleSheet, Platform } from 'react-native'
 import { Actions } from 'react-native-router-flux'
 
 
@@ -64,7 +64,11 @@ export default class DrawerItems extends React.Component {
 const styles = StyleSheet.create({
     button: { 
         marginTop: 45,
-        backgroundColor: '#A79B82',
-        color: '#FF6D70',
+        ...Platform.select({
+            android: {
+                backgroundColor: '#A79B82',
+                color: '#FF6D70',
+            }
+        })
     }
 })    
