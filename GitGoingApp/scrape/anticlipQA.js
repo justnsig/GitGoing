@@ -20,10 +20,10 @@ export const askClip = (question, ignore) => {
                 case "repository":
                 case "repo":
                 case "folder":
-                    return "repo";
+                    return "Create New Repo: git init";
                 case "branch":
                 case "version":
-                    return "branch: git checkout -b 'name of branch'";
+                    return "Create New Branch: git checkout -b 'name of branch'";
                 default:
                     break;
             }
@@ -41,10 +41,10 @@ export const askClip = (question, ignore) => {
                 case "repository":
                 case "repo":
                 case "folder":
-                    return "repo";
+                    return "Delete Repo: git rm -r 'folder-name'";
                 case "branch":
                 case "version":
-                    return "branch checkout";
+                    return "Delete Branch: git branch -d 'branch name'";
                 default:
                     break;
             }
@@ -54,18 +54,18 @@ export const askClip = (question, ignore) => {
           case "back":
           case "previous":
             //get data for match
-            return "Reset";
+            return "Reset to before most recent add or commit: git reset";
           case "add":
           case "commit":
           case "push":
           case "upload":
             //get data for match
-            return "Add, Commit, Push";
+            return "Add, Commit, Push: git add, git commit -m 'message', git push";
           case "download":
           case "pull":
           case "grab":
             //get data for match
-            return "Pull from Repo";
+            return "Pull from Repo: git pull";
           default:
             break;
             //default
