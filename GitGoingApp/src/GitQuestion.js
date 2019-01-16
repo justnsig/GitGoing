@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import { TouchableOpacity, Text, Button, StyleSheet, View, TextInput } from 'react-native'
+import {Form} from 'native-base';
 import { Actions } from 'react-native-router-flux'
 import AntiClippy from './AntiClippy'
 import * as Animatable from 'react-native-animatable'
@@ -28,6 +29,7 @@ render(){
      
       </View>
       </View>
+      <Form>
       <TextInput 
         placeholder="Your Git Question Here..."
         onChangeText={(text) => this.setState({question: text})}
@@ -41,6 +43,7 @@ render(){
          color='#FF6D70'
          />
       </TouchableOpacity>
+      </Form>
       </View>
          
          
