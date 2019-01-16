@@ -6,3 +6,6 @@ npm-debug.*
 *.p12
 *.key
 *.mobileprovision
+app-env
+db/fireKeys.js
+test.js

@@ -5,12 +5,7 @@ import { TextInput } from "react-native";
 import AntiClippyHalf from './AntiClippyHalf';
 import {Form} from 'native-base';
 import fire from '../db/fire';
-//import init from '../db/fireInit';
-import * as Animatable from 'react-native-animatable'
-
-// init.startApp();
-
-// App.initializeApp();
+import * as Animatable from 'react-native-animatable';
 
 const goToGitInit = () => {
    Actions.gitInit()

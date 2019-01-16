@@ -10,6 +10,7 @@ import GitStash from './GitStash'
 import GitCommit from './GitCommit'
 import GitReset from './GitReset'
 import GitPush from './GitPush'
+import GitQuestion from './GitQuestion'
 import DrawerItems from './DrawerItems'
 
 
@@ -27,6 +28,7 @@ const Routes = () => (
          <Scene key = "gitCommit" component = {GitCommit} title = "Git Commit" />
          <Scene key = "gitReset" component = {GitReset} title = "Git Reset" />
          <Scene key = "gitPush" component = {GitPush} title = "Git Push" />
+         <Scene key = "gitQuestion" component = {GitQuestion} title = "Git Question" />
       </Drawer>
       </Scene>
    </Router>
