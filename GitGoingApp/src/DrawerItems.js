@@ -43,6 +43,9 @@ const Push = () => {
     {Actions.gitPush()}
 };
 
+const Questions = () => {
+    {Actions.gitQuestion()}
+};
 export default class DrawerItems extends React.Component {
     render () {
     
@@ -58,6 +61,7 @@ export default class DrawerItems extends React.Component {
        <Button title="Git Reset" onPress={Reset} color='#A79B82'/>
        <Button title="Git Commit" onPress={Commit} color='#4A4843'/>
        <Button title="Git Push" onPress={Push} color='#A79B82'/>
+       <Button title="Git Question" onPress={Questions} color='#4A4843'/>
     </View>
    )}
 }
