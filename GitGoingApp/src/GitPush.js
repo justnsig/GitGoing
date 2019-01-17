@@ -5,8 +5,8 @@ import AntiClippy from './AntiClippy'
 import * as Animatable from 'react-native-animatable'
 //route to home
 const GitPush = () => {
-   const goTohome = () => {
-      Actions.home()
+   const goToQuestion = () => {
+      Actions.gitQuestion()
    }
    return (
       <View style={styles.container}>
@@ -20,7 +20,7 @@ const GitPush = () => {
       </View>
       <TouchableOpacity style={styles.button}> 
          <Button 
-         onPress = {goTohome}
+         onPress = {goToQuestion}
          title= "GitGoing Back Home"
          color='#FF6D70'
          />

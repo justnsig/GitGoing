@@ -42,6 +42,11 @@ render(){
          title= "Ask Clippy"
          color='#FF6D70'
          />
+         <Button 
+         onPress = {goToHome}
+         title= "GitGoing Back Home"
+         color='#FF6D70'
+         />
       </TouchableOpacity>
       </Form>
       </View>
