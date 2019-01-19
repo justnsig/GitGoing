@@ -1,4 +1,6 @@
 import React from 'react'
+import { widthPercentageToDP as wp} from "react-native-responsive-screen";
+import { heightPercentageToDP as hp } from "react-native-responsive-screen";
 import { TouchableOpacity, Text, Button, StyleSheet, View } from 'react-native'
 import { Actions } from 'react-native-router-flux'
 import AntiClippyL from './AntiClippyL'
@@ -46,25 +48,25 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column',
-    fontSize: 50,
+    fontSize: 60,
     textShadowColor: 'rgba(0, 0, 0, 0.75)',
     textShadowOffset: {width: -1, height: 1},
     textShadowRadius: 10,
-    marginTop: 40,
-    paddingTop: 175,
+    marginTop: hp('1%'),
+    paddingTop: hp('3%'),
     
    },
    //white circle
   circle1: {
    backgroundColor: '#fff',
-   width: 400,
-   height: 400,
+   width: wp('100%'),
+   height: hp('50%'),
    alignItems: 'center',
    justifyContent: 'center',
-   borderRadius: 200,
+   borderRadius: hp('30%'),
    borderColor: '#4A4843',
    borderWidth: 15,
-   marginTop:60,
+   marginTop: hp('1%'),
    flexDirection: 'row',
    alignItems: 'center',
    
@@ -73,12 +75,12 @@ const styles = StyleSheet.create({
  brownBox: {
    backgroundColor: '#A79B82',
    width: 410,
-   height:575,
-   alignItems: 'center',
+   height:hp('75%'),
    justifyContent: 'center',
+   alignItems: "center",
    borderRadius: 220,
-   marginTop: 30,
-   paddingBottom: 25,
+   marginTop: hp('2%'),
+   paddingBottom: 5,
  },
 
 //logo
@@ -90,7 +92,7 @@ const styles = StyleSheet.create({
  
  button: {
     color:'#FF6D70',
-    marginTop: 20,
+    marginTop: hp('3%'),
  },
  p:{
     color: 'black',
@@ -103,4 +105,5 @@ const styles = StyleSheet.create({
 
 
  });
+
 export default GitReset

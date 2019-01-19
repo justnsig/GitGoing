@@ -1,4 +1,6 @@
 import React from 'react'
+import { widthPercentageToDP as wp} from "react-native-responsive-screen";
+import { heightPercentageToDP as hp } from "react-native-responsive-screen";
 import { TouchableOpacity, Text, Button, StyleSheet, View } from 'react-native'
 import { Actions } from 'react-native-router-flux'
 import AntiClippy from './AntiClippy'
@@ -38,31 +40,32 @@ const styles = StyleSheet.create({
       alignItems: "center",      
     },
     
-   title: {
+   
+    title: {
       color: '#FF6D70',
     fontWeight: 'bold',
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column',
-    fontSize: 60,
+    fontSize: hp('5%'),
     textShadowColor: 'rgba(0, 0, 0, 0.75)',
     textShadowOffset: {width: -1, height: 1},
     textShadowRadius: 10,
     marginTop: 0,
-    paddingTop: 75,
+    paddingTop: hp('8%'),
     
    },
    //white circle
   circle1: {
    backgroundColor: '#fff',
-   width: 400,
-   height: 400,
+   width: wp('100%'),
+   height: hp('65%'),
    alignItems: 'center',
    justifyContent: 'center',
    borderRadius: 200,
    borderColor: '#4A4843',
    borderWidth: 15,
-   marginTop:60,
+   marginTop:hp('1%'),
    flexDirection: 'row',
    alignItems: 'center',
    
@@ -70,13 +73,13 @@ const styles = StyleSheet.create({
  //brown box
  brownBox: {
    backgroundColor: '#A79B82',
-   width: 410,
-   height:575,
+   width: wp('100%'),
+   height:hp('70%'),
    alignItems: 'center',
    justifyContent: 'center',
    borderRadius: 220,
-   marginTop: 50,
-   paddingBottom: 25,
+   marginTop: hp('2%'),
+   paddingBottom: hp('3%'),
  },
 
 //logo
@@ -88,7 +91,7 @@ const styles = StyleSheet.create({
  
  button: {
     color:'#FF6D70',
-    marginTop: 20,
+    marginTop: hp('5%'),
  },
  p:{
     color: 'black',

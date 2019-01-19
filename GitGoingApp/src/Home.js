@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import { TouchableOpacity, Text, Button, StyleSheet, View } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { TextInput } from "react-native";
+import { widthPercentageToDP as wp} from "react-native-responsive-screen";
+import { heightPercentageToDP as hp } from "react-native-responsive-screen";
 import AntiClippyHalf from './AntiClippyHalf';
 import {Form} from 'native-base';
 import fire from '../db/fire';
@@ -77,7 +79,7 @@ render(){
       </View>
       </Form>
       </View> 
-      <TouchableOpacity style = {{ marginTop: 250 }}> 
+      <TouchableOpacity style = {{ marginTop: hp('35%') }}> 
     
          <Button 
          onPress = {goToGitInit}
@@ -108,35 +110,37 @@ const styles = StyleSheet.create({
     textShadowOffset: {width: -1, height: 1},
     textShadowRadius: 10,
     marginTop: 0,
-    marginBottom: 0,
+    marginBottom: hp('1%'),
    },
    //white circle
   circle: {
    backgroundColor: '#fff',
-   width: 400,
-   height: 400,
+   width: wp('90%'),
+   height: hp('50%'),
    alignItems: 'center',
    justifyContent: 'center',
-   borderRadius: 200,
+   borderRadius: wp('100%'),
    borderColor: '#4A4843',
    borderWidth: 25,
-   marginTop:220,
+   marginTop: hp('25%'),
    
  },
  //brown box
  textBox1: {
    backgroundColor: '#A79B82',
-   width: 500,
-   height: 350,
+   width: wp('100%'),
+   height: hp('40%'),
    alignItems: 'center',
    justifyContent: 'center',
-   borderRadius: 30,
-   marginTop: 50,
+   marginTop: hp("2%"),
  },
 
 //logo
  AntiClippyHalf: {
-   flex: 1
+   flex: 1,
+   width: wp('20%'),
+   height: hp('20%'),
+   
  },
 
  //username
@@ -146,8 +150,9 @@ const styles = StyleSheet.create({
    borderColor: 'black',
    backgroundColor: '#FFF',
    borderRadius: 20,
-   width: 200,
-   marginTop: 0,
+   width: wp('50%'),
+   height: hp('5%'),
+   marginTop: wp('5%'),
    alignItems: 'center',   
    
  },
@@ -159,9 +164,10 @@ const styles = StyleSheet.create({
    borderColor: 'black',
    backgroundColor: '#FFF',
    borderRadius: 20,
-   width: 200,
-   marginTop: 10,
-   marginBottom: 20,
+   width: wp('50%'),
+   height: hp('5%'),
+   marginTop: hp('1%'),
+   marginBottom: hp('1%'),
    alignItems: 'center',
  },
 
