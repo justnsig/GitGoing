@@ -2,6 +2,11 @@
 import fire from '../db/fire';
 
 export const askClip = (question, ignore) => {
+
+  state = ({
+    response: ''
+  })
+  
     let clean = question.replace(/[^\w\s]/gi, '');
     let qArray = clean.toLowerCase().split(' ');
     qArray.splice(qArray.indexOf('a'), 1);
@@ -20,19 +25,19 @@ export const askClip = (question, ignore) => {
                 case "repository":
                 case "repo":
                 case "folder":
-                    return "Create New Repo: git init";
+                    return {...state, response: "Create New Repo: git init" };
                 case "branch":
                 case "version":
-                    return "Create New Branch: git checkout -b 'name of branch'";
+                    return {...state, response: "Create New Branch: git checkout -b 'name of branch'" };
                 default:
                     break;
             }
             //get data for match
-            break;
+            
           case "change":
           case "switch":
           case "alternate":
-            return "Change Branch: : git checkout 'name of branch'";
+            return { ...state, response: "Change Branch: : git checkout 'name of branch'" };
             //get data for match
           case "remove":
           case "delete":
@@ -41,10 +46,10 @@ export const askClip = (question, ignore) => {
                 case "repository":
                 case "repo":
                 case "folder":
-                    return "Delete Repo: git rm -r 'folder-name'";
+                    return { ...state, response: "Delete Repo: git rm -r 'folder-name'" };
                 case "branch":
                 case "version":
-                    return "Delete Branch: git branch -d 'branch name'";
+                    return {...state, response: "Delete Branch: git branch -d 'branch name'" };
                 default:
                     break;
             }
@@ -54,23 +59,23 @@ export const askClip = (question, ignore) => {
           case "back":
           case "previous":
             //get data for match
-            return "Reset to before most recent add or commit: git reset";
+            return { ...state, response: "Reset to before most recent add or commit: git reset" };
           case "add":
           case "commit":
           case "push":
           case "upload":
             //get data for match
-            return "Add, Commit, Push: git add, git commit -m 'message', git push";
+            return { ...state, response: "Add, Commit, Push: git add, git commit -m 'message', git push" };
           case "download":
           case "pull":
           case "grab":
             //get data for match
-            return "Pull from Repo: git pull";
+            return { ...state, response: "Pull from Repo: git pull" };
           default:
             break;
             //default
         }
       }
     }
-    return "Go Fish";
+    return {...state, response: "Looks like we could not find what you were looking for. Please try again."};
   }
