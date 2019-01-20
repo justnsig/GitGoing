@@ -47,7 +47,7 @@ render(){
         ></TextInput>
       <TouchableOpacity style={styles.button}>
          <Button 
-         onPress = {() => this.setState({return: askClip(this.state.question)})}
+         onPress = {() => this.setState({return: askClip(this.state.question), question: ''})}
          title= "Ask Anti-Clippy"
          color='#FF6D70'
          />

@@ -1,11 +1,46 @@
 //Handles the Q & A that anticlippy will be subjected to in the final route
 import fire from '../db/fire';
 
+createSwitch = (array, count) => {
+  console.log(`array: ${array}  Count: ${count}`)
+  console.log(array)
+  switch(array[(count+1)]){
+    case "repository":
+    case "repo":
+    case "folder":
+        return "Create New Repo: git init" ;
+    case "branch":
+    case "version":
+        return "Create New Branch: git checkout -b 'name of branch'" ;
+    default:
+        return 'create mistake';
+};
+}
+
+destroySwitch = (array, count) => {
+  console.log(`array: ${array}  Count: ${count}`)
+  switch(array[(count+1)]){
+    case "repository":
+    case "repo":
+    case "folder":
+        return "Delete Repo: git rm -r 'folder-name'" ;
+    case "branch":
+    case "version":
+        return "Delete Branch: git branch -d 'branch name'" ;
+    default:
+        return "delete mistake";
+}
+};
+
 export const askClip = (question, ignore) => {
-  
+    //question = question.concat("extra")
     let clean = question.replace(/[^\w\s]/gi, '');
     let qArray = clean.toLowerCase().split(' ');
-    qArray.splice(qArray.indexOf('a'), 1);
+    for(let w=0; w<qArray.length; w++){
+      if(qArray[w] === 'a'){
+        qArray.splice(qArray.indexOf('a'), 1);
+      }
+    };
     console.log(qArray);
     for(i=0; i<qArray.length; i++){
       if(qArray[i] === ignore){
@@ -17,7 +52,10 @@ export const askClip = (question, ignore) => {
           case "new":
           case "make":
           case "create":
-            switch(qArray[i+1]){
+            if(qArray[i+1] === 'new'){
+              i++
+            }
+              switch(qArray[(i+1)]){
                 case "repository":
                 case "repo":
                 case "folder":
@@ -26,29 +64,31 @@ export const askClip = (question, ignore) => {
                 case "version":
                     return "Create New Branch: git checkout -b 'name of branch'" ;
                 default:
-                    break;
-            }
+                    return 'Not understanding, make sure your grammer is correct and try again...';
+          };
             //get data for match
-            
           case "change":
           case "switch":
           case "alternate":
-            return "Change Branch: : git checkout 'name of branch'" ;
+            return "Change Branch: git checkout 'name of branch'" ;
             //get data for match
           case "remove":
           case "delete":
           case "destroy":
-            switch(qArray[i+1]){
-                case "repository":
-                case "repo":
-                case "folder":
-                    return "Delete Repo: git rm -r 'folder-name'" ;
-                case "branch":
-                case "version":
-                    return "Delete Branch: git branch -d 'branch name'" ;
-                default:
-                    break;
-            }
+          if(qArray[i+1] === 'new'){
+            i++
+          }
+            switch(qArray[(i+1)]){
+              case "repository":
+              case "repo":
+              case "folder":
+                  return "Delete Repo: git rm -r 'folder-name'" ;
+              case "branch":
+              case "version":
+                  return "Delete Branch: git branch -d 'branch name'" ;
+              default:
+                  return "Not catching your drift buddy, please try again...";
+          }
             //get data for match
             //break;
           case "reset":
