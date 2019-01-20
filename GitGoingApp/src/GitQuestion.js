@@ -18,16 +18,22 @@ constructor(props){
     super(props)
 
     this.state = ({
-    question: ''
+    question: '',
+    return: '',
     })
 }
+
+componentDidMount(){
+   this.setState({return: 'Have Questions?  Ask Anti-Clippy what kind of Git operation you need help with...'})
+}
+
 render(){
    return (
       <View style={styles.container}>
      
       <Text style={styles.title}>Got Questions</Text>
       <View style={styles.circle1}>
-      <Text style={styles.p}>Have Questions?  Ask Anti-Clippy what kind of Git operation you need help with...</Text> 
+      <Text style={styles.p}>{this.state.return}</Text> 
       <Animatable.View animation="bounceInRight"><AntiClippy style={styles.AntiClippy}/></Animatable.View>
      
  
@@ -41,7 +47,7 @@ render(){
         ></TextInput>
       <TouchableOpacity style={styles.button}>
          <Button 
-         onPress = {() => console.log(askClip(this.state.question))}
+         onPress = {() => this.setState({return: askClip(this.state.question), question: ''})}
          title= "Ask Anti-Clippy"
          color='#FF6D70'
          />
