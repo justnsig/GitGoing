@@ -17,13 +17,11 @@ Also, by clicking on the "GIT QUESTION" link, the user can ask anti-clippy what 
 <img width="350" src="./GitGoingApp/assets/questionScreenshot.png">
 
 # Technologies Used
-
------
-React Native
-HTML
-CSS
-JavaScript
-Expo
-Firebase
+*React Native
+*HTML
+*CSS
+*JavaScript
+*Expo
+*Firebase
 
 
