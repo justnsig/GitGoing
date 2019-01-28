@@ -1,0 +1,19 @@
+{
+  "name": "gitgoing",
+  "version": "1.0.0",
+  "description": "![alt text](./GitGoingApp/assets/antiClippy.png \"anti-clippy\")",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justnsig/GitGoing.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/justnsig/GitGoing/issues"
+  },
+  "homepage": "https://github.com/justnsig/GitGoing#readme"
+}
