@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
  brownBox: {
    backgroundColor: '#A79B82',
    width: wp('100%'),
-   height:hp('70%'),
+   height: hp('70%'),
    alignItems: 'center',
    justifyContent: 'center',
    borderRadius: 220,
