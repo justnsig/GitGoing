@@ -24,4 +24,6 @@ Also, by clicking on the "GIT QUESTION" link, the user can ask anti-clippy what 
 * Expo
 * Firebase
 
+# Download it now from the Google Play Store!  https://play.google.com/store/apps/details?id=com.gitgoing.gitgoing&rdid=com.gitgoing.gitgoing
+
 
